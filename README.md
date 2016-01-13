@@ -17,13 +17,15 @@ for species in Amel Bter Hsal Cflo Pdom Nvit Atha Bdis Osat; do
 done
 ```
 
-## Shuffling iLoci results in fewer miLoci and fewer genes per miLocus.
+## Shuffling iLoci results in fewer miLoci, shorter miLoci, and fewer genes per miLocus.
 
 ```
 for species in Amel Bter Hsal Cflo Pdom Nvit Atha Bdis Osat; do
     ./miloci.sh $species
 done
 ```
+
+See also `miLocusCountLength.ipynb`.
 
 ## Shuffling iLoci results increase the number of giLoci flanked on one or both sides by iiLoci
 
