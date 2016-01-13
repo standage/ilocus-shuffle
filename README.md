@@ -9,7 +9,7 @@ genhub-build.py --numprocs=4 --workdir=scratch/species/ --cfgdir=scratch/tempcon
 parallel --gnu --jobs=4 bash shuffle.sh species {} ::: Amel Bter Hsal Cflo Pdom Nvit Atha Bdis Osat
 ```
 
-## Shuffled iLoci have fewer ziLoci by a substantial margin.
+## Shuffling iLoci results in fewer ziLoci by a substantial margin.
 
 ```
 for species in Amel Bter Hsal Cflo Pdom Nvit Atha Bdis Osat; do
@@ -17,10 +17,18 @@ for species in Amel Bter Hsal Cflo Pdom Nvit Atha Bdis Osat; do
 done
 ```
 
-## Shuffled iLoci result in fewer miLoci and fewer genes per miLocus.
+## Shuffling iLoci results in fewer miLoci and fewer genes per miLocus.
 
 ```
 for species in Amel Bter Hsal Cflo Pdom Nvit Atha Bdis Osat; do
     ./miloci.sh $species
+done
+```
+
+## Shuffling iLoci results increase the number of giLoci flanked on one or both sides by iiLoci
+
+```
+for species in Amel Bter Hsal Cflo Pdom Nvit Atha Bdis Osat; do
+    ./filens-drive.sh $species
 done
 ```
