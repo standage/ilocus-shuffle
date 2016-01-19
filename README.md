@@ -24,7 +24,7 @@ I need to clean this up.
 ## Shuffling iLoci results in fewer miLoci, shorter miLoci, and fewer genes per miLocus.
 
 ```
-for species in ; do
+for species in $specieslist; do
     ./miloci.sh $species
 done
 ```
@@ -34,7 +34,7 @@ See also `miLocusCountLength.ipynb`.
 ## Shuffling iLoci increases the number of giLoci flanked on one or both sides by iiLoci
 
 ```
-for species in Amel Bter Hsal Cflo Pdom Nvit Atha Bdis Osat; do
+for species in $specieslist; do
     ./filens-drive.sh $species
 done
 ```
