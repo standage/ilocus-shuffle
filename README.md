@@ -18,6 +18,9 @@ done
 See `iiLoci.ipynb` and `adjacent-iiLoci.ipynb`.
 The trend is much more drastic for insects than for plants, and it's only a slight increase in vertebrates.
 
+**Note**: average and median lengths are reported in `adjacent-iiLoci.ipynb` and not `iiLoci.ipynb`, even though it makes more sense to report them in the latter since ziLoci are excluded.
+I need to clean this up.
+
 ## Shuffling iLoci results in fewer miLoci, shorter miLoci, and fewer genes per miLocus.
 
 ```
