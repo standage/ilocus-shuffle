@@ -27,10 +27,15 @@ done
 
 See also `miLocusCountLength.ipynb`.
 
-## Shuffling iLoci results increase the number of giLoci flanked on one or both sides by iiLoci
+## Shuffling iLoci increases the number of giLoci flanked on one or both sides by iiLoci
 
 ```
 for species in Amel Bter Hsal Cflo Pdom Nvit Atha Bdis Osat; do
     ./filens-drive.sh $species
 done
 ```
+
+## Shuffling iLoci increases the number of iiLoci.
+
+See `iiLoci.ipynb`.
+The trend is much more drastic for insects than for plants, and it's only a slight increase in vertebrates.
