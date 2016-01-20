@@ -12,10 +12,11 @@ milocus_breakdown()
 }
 
 species=$1
-prefix=species/${species}/shuffled/${species}
+prefix=../species/${species}/shuffled/${species}
 
 echo ""
 echo $species
+echo "----"
 
-milocus_breakdown ${prefix}.orig.miloci.gff3
-milocus_breakdown ${prefix}.shuffled.miloci.gff3
+paste <(milocus_breakdown ${prefix}.orig.miloci.gff3) \
+      <(milocus_breakdown ${prefix}.shuffled.miloci.gff3)

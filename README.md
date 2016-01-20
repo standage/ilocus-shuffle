@@ -1,40 +1,27 @@
 # iLocus Shuffling
 
-```
-# insect: Amel, Bter, Hsal, Cflo, Pdom, Nvit, Dmel
-# plant: Atha, Bdis, Osat
-# vertebrate: Xtro (Xenopus tropicalis), Drer (Danio rerio), Btau (Bos taurus), Mmus (Mus musculus)
-specieslist="Amel Bter Hsal Cflo Pdom Nvit Dmel Atha Bdis Osat Xtro Drer Btau Mmus"
-```
+## Species studied
 
-## Shuffling iLoci results in fewer ziLoci by a substantial margin.
+- insects: Amel, Bter, Hsal, Cflo, Pdom, Nvit, Dmel
+- plants: Atha, Bdis, Osat
+- vertebrates: Xtro (Xenopus tropicalis), Drer (Danio rerio), Btau (Bos taurus), Mmus (Mus musculus)
 
-```
-for species in $specieslist; do
-    ./perc-zilocus.sh $species
-done
-```
+## iLocus shuffling procedure
 
-See `iiLoci.ipynb` and `adjacent-iiLoci.ipynb`.
-The trend is much more drastic for insects than for plants, and it's only a slight increase in vertebrates.
+*iLocus shuffling* would be more accurately described as *random distribution of giLoci*.
+The procedure, on a per-sequence basis, is this.
 
-**Note**: average and median lengths are reported in `adjacent-iiLoci.ipynb` and not `iiLoci.ipynb`, even though it makes more sense to report them in the latter since ziLoci are excluded.
-I need to clean this up.
+- select the gene-containing iLoci (giLoci) for the sequence
+- shuffle the giLoci
+- re-distribute the giLoci (and attached gene features) on the sequence randomly, such that giLoci don't overlap
+- re-compute iLocus boundaries and neighbor statistics on re-distributed genes
 
-## Shuffling iLoci results in fewer miLoci, shorter miLoci, and fewer genes per miLocus.
+Six sequences > 1Mb in length were selected from each species, and a 1Mb region was sampled randomly from each.
+All of the statistics and results reported here were done on this subset of data.
+The selection is reproducible with the given random seed(s).
 
-```
-for species in $specieslist; do
-    ./miloci.sh $species
-done
-```
+## Results
 
-See also `miLocusCountLength.ipynb`.
-
-## Shuffling iLoci increases the number of giLoci flanked on one or both sides by iiLoci
-
-```
-for species in $specieslist; do
-    ./filens-drive.sh $species
-done
-```
+- [Shuffling iLoci results in fewer ziLoci by a substantial margin](ziloci/)
+- [Shuffling iLoci results in fewer miLoci, shorter miLoci, and fewer genes per miLocus](miloci/)
+- [Shuffling iLoci decreases the number of giLoci flanked on one or both sides by ziLoci](filens/)
